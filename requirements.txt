@@ -1,0 +1,3 @@
+# Python client that lets your scripts talk to CoppeliaSim
+# (automatically installs the ZeroMQ and CBOR dependencies)
+coppeliasim-zmqremoteapi-client
