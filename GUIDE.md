@@ -1,173 +1,271 @@
 # 🚀 CoppeliaSim for Complete Beginners — The One Guide
 
-This is **the only guide you need**. It takes you from **zero** to:
+This guide takes you from **zero** to:
 
-1. Running CoppeliaSim
-2. Controlling it with **Python**
-3. Saving your code on **GitHub** with **Git**
+1. Running CoppeliaSim (a robot simulator program)
+2. Controlling robots with **Python**
+3. Saving your code online with **GitHub**
 
-Follow the parts **in order**. Every step tells you **exactly** what to click or type. If something doesn't work, jump to **Part 8 (Problems & Fixes)**.
-
----
-
-## What you will make (in 30–45 minutes)
-
-| What | Where | What you'll see |
-| ---- | ----- | --------------- |
-| ✅ A connection test | `scripts/00_hello_coppelia.py` | Python says "Connected to CoppeliaSim!" |
-| ✅ A moving cube | `scripts/01_first_simulation.py` | A blue-ish cube **circles around** for 5 seconds in CoppeliaSim |
-| ✅ A spinning robot arm | `scripts/02_spin_the_joint.py` | A rod **rotates in circles** like a clock hand |
-| ✅ Your code on GitHub | Part 7 | Your scripts saved online |
+You do **not** need to know robotics or programming. Every step tells you exactly what to click or type.
 
 ---
 
-## Checklist before you start
+## How to use this guide
 
-- [ ] A computer (Windows / macOS / Linux) — no special hardware needed
-- [ ] Internet (to download 2 things: CoppeliaSim + one Python package)
+The steps are a little different on Windows and Mac. Find yours and follow only that one:
+
+| Symbol | Your computer |
+| ------ | ------------- |
+| 🪟 **Windows** | Most laptops and PCs (Windows 10 or 11) |
+| 🍎 **macOS** | Apple computers (MacBook, iMac) |
+
+Rules that always apply:
+
+- **Type the commands exactly as shown**, then press **Enter**.
+- **Copy-paste is fine** (Ctrl+C / Ctrl+V on Windows, Cmd+C / Cmd+V on Mac).
+- If something goes wrong, jump to **Part 8 — Problems & Fixes**.
+
+## What you need before starting
+
+- [ ] A computer with **Windows 10/11** or **macOS**
+- [ ] Internet (we download 2 things: CoppeliaSim + one Python package)
 - [ ] About 30–45 minutes
 
 ---
 
 # PART 1 — Install CoppeliaSim ⏱️ 5 minutes
 
-## 1.1 Go to the download page
+CoppeliaSim is a program that shows robots in 3D and simulates them. The free version for learning is called **CoppeliaSim Edu**.
 
-Open this link in your browser:
+## 1.1 Download it
+
+**Step 1.** Open your browser and go to:
 
 **<https://www.coppeliarobotics.com/downloads>**
 
-Find the section called **CoppeliaSim Edu** (it is the free one for learning).
+**Step 2.** Scroll to the section called **CoppeliaSim Edu**.
 
-## 1.2 Download the file for your computer
+**Step 3.** Click the button for your computer:
 
 | Your computer | Click on | You get a file like |
 | ------------- | -------- | ------------------- |
-| **Windows** | Windows | `CoppeliaSim_Edu_V4_10_0_rev0_Setup.exe` |
-| **macOS** | macOS | `CoppeliaSim_Edu_V4_10_0_rev0.dmg` |
-| **Linux** | Ubuntu 20.04 / 22.04 | `CoppeliaSim_Edu_V4_10_0_rev0_Ubuntu22_04.tar.gz` |
+| 🪟 Windows | **Windows** (installer package) | `CoppeliaSim_Edu_V4_10_0_Setup.exe` |
+| 🍎 macOS | **macOS** | `CoppeliaSim_Edu_V4_10_0_Mac.dmg` |
 
-> Don't worry about the exact version number — any version 4.4 or newer works.
+> Don't worry about the exact version number. Any version **4.4 or newer** works with this guide.
 
-## 1.3 Install and open it
+> 🍎 **Mac only — which macOS button do I click?**
+> Click the **Apple logo** (top-left corner of your screen) → **About This Mac**.
+> - If it says chip **Apple M1 / M2 / M3 / M4** → download the **Apple Silicon** version.
+> - If it says **Intel** → download the **Intel** version.
 
-**Windows:** double-click the `.exe` → click Next, Next, Install → open **CoppeliaSim** from the Start menu.
+## 1.2 Install it
 
-**macOS:** open the `.dmg` → drag the **CoppeliaSim** icon into **Applications** → open it.
-> If macOS says "unidentified developer": **right-click** the app icon → **Open** → **Open** again.
+**Step 1.** Wait for the download to finish. The file is in your **Downloads** folder.
 
-**Linux:** open a terminal and type:
+**Step 2.** Follow only your system:
 
-```bash
-tar -xzf CoppeliaSim_Edu_V4_10_0_rev0_Ubuntu22_04.tar.gz
-cd CoppeliaSim_Edu_V4_10_0_rev0_Ubuntu22_04
-./coppeliasim.sh
-```
+### 🪟 Windows
 
-## 1.4 You should now see this
+1. Double-click the `.exe` file you downloaded.
+2. If Windows asks *"Do you want to allow this app to make changes?"* → click **Yes**.
+3. Click **Next** → **Next** → **Install** → **Finish**. (Default settings are fine.)
 
-A 3D scene with a small robot driving around. That's it — CoppeliaSim works! 🎉
+### 🍎 macOS
 
-## 1.5 The only 4 buttons you need for now
+1. Double-click the `.dmg` file you downloaded. A window opens with two icons.
+2. **Drag the CoppeliaSim icon onto the Applications folder.** This copies the app into your Applications.
+3. Close the window.
 
-In the top toolbar:
+> 🍎 **If macOS says "unidentified developer" or blocks the app:**
+> Don't panic. Open your **Applications** folder, **right-click** (or Ctrl+click) the CoppeliaSim icon → click **Open** → click **Open** again. You only need to do this the first time.
+
+## 1.3 Open CoppeliaSim
+
+### 🪟 Windows
+Press the **Windows key**, type `CoppeliaSim`, press **Enter**.
+
+### 🍎 macOS
+Press `Cmd + Space`, type `CoppeliaSim`, press **Enter** (or open the **Applications** folder and double-click it).
+
+**What you should see:** a 3D scene opens with a small robot in the middle. That means it works! 🎉
+
+## 1.4 The 4 buttons you need
+
+At the top of the CoppeliaSim window:
 
 | Button | What it does |
 | ------ | ------------ |
-| ▶️ **Play** | Starts the simulation |
-| ⏸ **Pause** | Freezes it |
-| ⏹ **Stop** | Resets everything |
-| 🖱️ **Mouse drag** | Rotates the camera around the scene |
+| ▶️ **Play** | Starts the simulation (robot starts moving) |
+| ⏸ **Pause** | Freezes everything |
+| ⏹ **Stop** | Resets everything back to the start |
+| 🖱️ **Drag with left mouse button** | Rotates the camera around the scene |
 
-**Try it:** click ▶️ Play, watch the robot, click ⏹ Stop.
+**Try it now:** click ▶️ Play → watch the robot → click ⏹ Stop.
 
-## 1.6 Turn on the "bridge" to Python (one click)
+## 1.5 Turn on the "bridge" to Python (one click)
 
-Python talks to CoppeliaSim through a small helper called the **ZMQ remote API server**. It normally starts by itself, but let's make sure:
+Python talks to CoppeliaSim through a built-in helper called the **ZMQ remote API server**. It usually starts by itself, but let's check once:
 
-In the CoppeliaSim menu bar:
+**Step 1.** In the CoppeliaSim menu bar (top of the window) click:
 
 **`Modules → Connectivity → ZMQ remote API server`**
 
-Look at the small console at the bottom. You should see something like:
+**Step 2.** Look at the bottom of the window (the console area). You should see a line like:
 
 ```
-ZMQ remote API server started on port 23000
+ZMQ remote API server started
 ```
 
-CoppeliaSim is ready. Keep it **open** — we'll come back to it.
+That's it. **Keep CoppeliaSim open** — we come back to it in Part 3.
 
 ---
 
-# PART 2 — Install the Python piece ⏱️ 5 minutes
-
-Python is the "brain" that will control CoppeliaSim. We need one small package so they can talk.
+# PART 2 — Get the tutorial files + Python ⏱️ 10 minutes
 
 ## 2.1 Open a terminal
 
-- **Windows:** press `Windows key`, type `powershell`, press Enter.
-- **macOS:** press `Cmd + Space`, type `terminal`, press Enter.
-- **Linux:** press `Ctrl + Alt + T`.
+A **terminal** is a window where you type commands to your computer. Every computer has one:
 
-## 2.2 Go to this project folder
+- 🪟 **Windows:** press the **Windows key**, type `powershell`, press **Enter**.
+- 🍎 **macOS:** press **Cmd + Space**, type `terminal`, press **Enter**.
+
+You should see a small window with a blinking cursor, waiting for you to type. That's the terminal. ✅
+
+## 2.2 Check that Python is installed
+
+Python is the programming language we use to control the robots.
+
+**Step 1.** In the terminal, type this and press **Enter**:
 
 ```bash
-cd CoppeliaSim_tutorial
+python --version
 ```
 
-(If you downloaded this guide from GitHub, first run `git clone <your-repo-url>` — Part 7 explains it, or just put your scripts in any folder and `cd` into it.)
+**Step 2.** Read the answer:
 
-## 2.3 Make a private "room" for Python (recommended)
+- If you see something like `Python 3.11.5` → Python is ready. Skip to 2.3.
+- If you see an error, or `"python" not found` → try `python3 --version`.
+- If **both** fail → install Python now:
+
+### 🪟 Windows — install Python
+
+1. Go to <https://www.python.org/downloads/> and click the big yellow **Download Python 3.x.x** button.
+2. Run the downloaded file.
+3. ⚠️ **MOST IMPORTANT STEP:** on the first screen, **tick the checkbox "Add python.exe to PATH"** (bottom of the window). If you forget this, nothing will work.
+4. Click **Install Now** → wait → **Close**.
+5. **Close your terminal and open a new one** (the old one doesn't know about Python yet), then try `python --version` again.
+
+### 🍎 macOS — install Python
+
+1. Go to <https://www.python.org/downloads/> and click the big yellow **Download Python 3.x.x** button.
+2. Run the downloaded `.pkg` file → **Continue** → **Continue** → **Install**.
+3. Try `python3 --version` in your terminal.
+
+> On Mac you may always need to type `python3` instead of `python`. That's normal — this guide shows `python`, just add the `3` if needed.
+
+## 2.3 Get the tutorial files onto your computer
+
+All tutorial files live on GitHub here:
+
+**<https://github.com/Kavinda-Wickramasinghe/CoppeliaSim_tutorial>**
+
+**Step 1.** Open that link in your browser.
+
+**Step 2.** Click the green **`<> Code`** button → click **Download ZIP**.
+
+**Step 3.** Open the downloaded ZIP file:
+
+- 🪟 Windows: right-click the ZIP (in Downloads) → **Extract All...** → **Extract**
+- 🍎 macOS: double-click the ZIP — it extracts by itself
+
+**Step 4.** In the terminal, go into that folder. Type the command for your system:
+
+```bash
+# 🪟 Windows:
+cd Downloads\CoppeliaSim_tutorial-main
+
+# 🍎 macOS:
+cd Downloads/CoppeliaSim_tutorial-main
+```
+
+> `cd` means "**c**hange **d**irectory" = "go into this folder".
+> Tip: type `cd Down` and press **Tab** — the terminal fills in the rest of the name for you.
+
+**Check it worked:** type `dir` (Windows) or `ls` (Mac) and press Enter. You should see `GUIDE.md`, `scripts`, `requirements.txt`.
+
+## 2.4 Make a private "room" for Python (one time only)
+
+We create a folder called `.venv` (a **virtual environment**). It keeps this tutorial's Python packages separate from everything else on your computer, so nothing can break.
+
+**Step 1.** In the terminal (inside the tutorial folder), type:
 
 ```bash
 python -m venv .venv
 ```
 
-This creates a folder called `.venv` — a private room for our packages so we never mess up other projects. You only do this **once**.
+Nothing much seems to happen — it just creates a hidden `.venv` folder. Now we "enter" it:
 
-## 2.4 Enter the room
+**Step 2.** Activate it — different on Windows and Mac:
 
-**Windows:**
-```bash
+### 🪟 Windows
+
+```powershell
 .venv\Scripts\activate
 ```
 
-**macOS / Linux:**
+> ⚠️ If you see red text saying *"running scripts is disabled"*: PowerShell is being careful. Fix it with this one command, then try again:
+> ```powershell
+> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
+
+### 🍎 macOS
+
 ```bash
 source .venv/bin/activate
 ```
 
-You should see `(.venv)` appear at the start of your command line. That means it worked.
+**What success looks like:** the start of your terminal line now shows `(.venv)`, like:
 
-## 2.5 Install the package (one command)
+```
+(.venv) C:\Users\you\CoppeliaSim_tutorial-main>
+```
+
+Everything you install now stays inside this project. ✅
+
+> You need to activate it **every time you open a new terminal** (it turns off when you close the window).
+
+## 2.5 Install the talking package (one command)
+
+This installs `coppeliasim-zmqremoteapi-client` — the small Python package that lets Python "call" CoppeliaSim:
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-This installs `coppeliasim-zmqremoteapi-client` — the package that lets Python "call" CoppeliaSim.
+Wait until it finishes (some lines scroll by — that's normal).
 
 **Check it worked:**
+
 ```bash
 python -c "from coppeliasim_zmqremoteapi_client import RemoteAPIClient; print('OK')"
 ```
 
-If it prints `OK`, you're ready. ✅
+If it prints `OK` → you are ready. ✅
 
 ---
 
-# PART 3 — Your first connection test ⏱️ 2 minutes
+# PART 3 — First connection test ⏱️ 2 minutes
 
-## 3.1 Do this in this exact order
+**Step 1.** Look at CoppeliaSim. Is it still open? Good. (If not, open it — see Part 1.3.)
 
-1. Make sure **CoppeliaSim is open** (from Part 1).
-2. In your terminal, run:
+**Step 2.** In your terminal (the one showing `(.venv)`), type:
 
 ```bash
 python scripts/00_hello_coppelia.py
 ```
 
-## 3.2 You should see
+**Step 3.** You should see:
 
 ```
 Connected to CoppeliaSim!
@@ -177,44 +275,45 @@ Found 21 shape object(s) in the scene.
   - ...
 ```
 
-If you see `Connected to CoppeliaSim!` — **you did it!** Python and CoppeliaSim are now talking. 🎉
+If you see `Connected to CoppeliaSim!` → **Python and CoppeliaSim are talking!** 🎉
 
-> **The golden rule:** CoppeliaSim must be running **before** you run any Python script. If you close CoppeliaSim, Python loses connection.
+> 🟢 **The golden rule:** CoppeliaSim must be **open before** you run any Python script. If you close CoppeliaSim, Python has nobody to talk to.
 
 ---
 
-# PART 4 — Your first real simulation: a moving cube ⏱️ 5 minutes
+# PART 4 — Your first simulation: a moving cube ⏱️ 5 minutes
 
-This is the fun part. Run:
+**Step 1.** Keep CoppeliaSim open.
+
+**Step 2.** In the terminal, type:
 
 ```bash
 python scripts/01_first_simulation.py
 ```
 
-**Watch the CoppeliaSim window!** A **cube appears** and moves in a **circle** for 5 seconds, while the terminal prints its position:
+**Step 3.** Look at the **CoppeliaSim window**: a **cube appears and moves in a circle** for 5 seconds. Meanwhile the terminal prints its position:
 
 ```
 t = 0.00 s  ->  cube at (0.000, 0.500, 0.300)
 t = 0.05 s  ->  cube at (0.050, 0.499, 0.300)
-t = 0.10 s  ->  cube at (0.099, 0.495, 0.300)
 ...
 Simulation finished.
 ```
 
-After it ends, find the cube in the scene list on the right — it's called `MyFirstCube`. It stays there so you can look at it.
+After it ends, the cube (named `MyFirstCube`) stays in the scene so you can look at it.
 
-## 4.1 What the script does (the whole idea in 4 lines)
+## 4.1 What just happened (simple version)
 
-Think of it like a phone call between two people:
+Think of it as a phone call:
 
-| Code | Meaning (simple version) |
-| ---- | ------------------------ |
+| Code | Plain English |
+| ---- | ------------- |
 | `client = RemoteAPIClient()` | **Dial the phone** — connect to CoppeliaSim |
-| `sim = client.require("sim")` | **Get the remote control** — now `sim` controls the simulation |
-| `sim.setStepping(True)` | **"Don't move until I say so"** — the simulation waits for us each step |
-| `sim.step()` | **"Move one tiny step"** — the simulation advances a little |
+| `sim = client.require("sim")` | **Get the remote control** — now `sim` is the remote |
+| `sim.setStepping(True)` | **"Don't move until I say so"** — simulation waits for us |
+| `sim.step()` | **"Move one tiny step now"** |
 
-Then the loop repeats 100 times, **telling the cube where to go** with:
+Then the loop runs 100 times, each time telling the cube where to go:
 
 ```python
 sim.setObjectPosition(cube, sim.handle_world, [x, y, z])
@@ -222,10 +321,10 @@ sim.setObjectPosition(cube, sim.handle_world, [x, y, z])
 
 That's it. You are a robot programmer now. 🎓
 
-## 4.2 The 5 most-used commands (memory helpers)
+## 4.2 The 5 commands you'll use most
 
-| Command | Memory helper |
-| ------- | ------------- |
+| Command | Remember it as |
+| ------- | -------------- |
 | `sim.startSimulation()` | Press ▶️ Play |
 | `sim.stopSimulation()` | Press ⏹ Stop |
 | `sim.createPrimitiveShape(...)` | "Make me a box" |
@@ -236,15 +335,17 @@ That's it. You are a robot programmer now. 🎓
 
 # PART 5 — Your first robot arm: spin a joint ⏱️ 5 minutes
 
-Run:
+A **joint** is a motor that rotates — every real robot arm, wheel, and gripper is built from joints.
+
+**Step 1.** CoppeliaSim still open? Yes.
+
+**Step 2.** Run:
 
 ```bash
 python scripts/02_spin_the_joint.py
 ```
 
-A **joint** (a little hinge) appears, a **rod** is attached to it, and the rod **spins in circles** at 2 radians per second.
-
-The terminal prints the angle:
+**Step 3.** In CoppeliaSim: a **rod appears and spins in circles** like a clock hand, for 5 seconds. The terminal prints the angle:
 
 ```
 t = 0.00 s  ->  joint angle = 0.00 rad
@@ -256,84 +357,112 @@ t = 0.05 s  ->  joint angle = 0.10 rad
 
 ```python
 sim.createJoint(sim.joint_revolute, sim.jointmode_kinematic, 0)  # 1. make a hinge
-sim.setObjectParent(arm, joint, True)                             # 2. stick the arm on it
-sim.setJointTargetVelocity(joint, 2.0)                            # 3. spin it at 2 rad/s
+sim.setObjectParent(arm, joint, True)                            # 2. stick the arm on it
+sim.setJointTargetVelocity(joint, 2.0)                           # 3. spin at speed 2
 ```
 
-A **joint** is how real robots move — every robot arm, wheel, and gripper uses them. You've just done real robotics.
+Real robotics, three lines. 🤖
 
 ---
 
-# PART 6 — Make it yours (try these) 🧪 5 minutes
+# PART 6 — Change the numbers (learn by playing) 🧪 5 minutes
 
-Open `scripts/01_first_simulation.py` in any text editor and change one number:
+**Step 1.** Open `scripts/01_first_simulation.py` in any editor:
 
-| Change | Line | Result |
-| ------ | ---- | ------ |
-| Bigger circle | `0.5 * math.sin(...)` → `1.0 * math.sin(...)` | Cube circles further out |
-| Faster movement | `2.0 * t` → `4.0 * t` | Faster circle |
-| Longer show | `DURATION = 5.0` → `DURATION = 10.0` | Moves for 10 seconds |
+- 🪟 Windows: **Notepad** (right-click the file → Open with → Notepad)
+- 🍎 macOS: **TextEdit**
 
-Then run it again: `python scripts/01_first_simulation.py`
+(Better both: install the free **VS Code** editor from <https://code.visualstudio.com>.)
 
-> Break it, fix it, change it — **that's how you learn.** (The script creates the cube fresh if it's missing, so reruns are safe.)
+**Step 2.** Change **one** number:
+
+| Change this | To this | What happens |
+| ----------- | ------- | ------------ |
+| `0.5 * math.sin(...)` | `1.0 * math.sin(...)` | Circle gets bigger |
+| `2.0 * t` | `4.0 * t` | Cube moves faster |
+| `DURATION = 5.0` | `DURATION = 10.0` | Runs for 10 seconds |
+
+**Step 3.** Save the file (Ctrl+S on Windows / Cmd+S on Mac) and run it again:
+
+```bash
+python scripts/01_first_simulation.py
+```
+
+> Break it, fix it, change it — **that's how you learn.** (The script rebuilds the cube if needed, so running it again is always safe.)
 
 ---
 
 # PART 7 — Save your work with Git & GitHub ⏱️ 10 minutes
 
-**Why?** Git is like **save points in a video game**. Every `commit` is a save point. **GitHub** is your save file in the cloud, so your code can never be lost — and anyone can see it.
+**Why?** Git is like **save points in a video game** — every `commit` is a save point. GitHub is your **cloud backup**, so your code can never be lost.
+
+This project already has a GitHub home:
+
+**<https://github.com/Kavinda-Wickramasinghe/CoppeliaSim_tutorial>**
 
 ## 7.1 Install Git
 
-| Computer | What to do |
-| -------- | ---------- |
-| **Windows** | Download from <https://git-scm.com/download/win>, run the installer, click Next all the way |
-| **macOS** | In Terminal: `xcode-select --install` |
-| **Linux** | In Terminal: `sudo apt install git` |
+### 🪟 Windows
+1. Download from <https://git-scm.com/download/win> and run the installer.
+2. Click **Next** on every screen (default settings are fine) → **Install** → **Finish**.
+3. **Close and reopen your terminal** so it notices Git.
 
-Check it works:
+### 🍎 macOS
+In the terminal:
 ```bash
-git --version
+xcode-select --install
 ```
+A window appears → click **Install** → wait for it to finish.
 
-## 7.2 Tell Git who you are (one time)
+**Check it worked** (both systems): type `git --version` → you should see a version number.
+
+## 7.2 Tell Git who you are (one time only)
+
+Type these 2 commands, but put **your own name and email**:
 
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
 ```
 
-## 7.3 Create your free GitHub account & repository
+(This is just a signature on your save points — use the same email as your GitHub account.)
 
-1. Go to <https://github.com> and sign up (free).
-2. Click **+** (top right) → **New repository**.
-3. Name it, e.g. `coppeliasim-tutorial`. Click **Create repository**.
-4. Copy the address it shows, like: `https://github.com/YOUR-NAME/coppeliasim-tutorial.git`
+## 7.3 Create your free GitHub account
 
-## 7.4 Type these 5 commands (the whole magic ✨)
+1. In your browser, go to <https://github.com> → **Sign up** (top right) → follow the steps (free).
+2. Sign in.
 
-In your terminal, inside the project folder:
+> To push to **this** repository (`Kavinda-Wickramasinghe/CoppeliaSim_tutorial`) you must be its owner (Kavinda) or be added as a collaborator.
+> Not the owner? Create your own repository instead: click **+** (top right) → **New repository** → name it `coppeliasim-tutorial` → **Create repository** — and use **your** address in step 7.4 below.
+
+## 7.4 Save & upload (the 5 magic commands)
+
+In your terminal, **inside the tutorial folder** (where `GUIDE.md` is), type these one by one:
 
 ```bash
-git init                                  # 1. turn on the "save system"
-git add .                                 # 2. choose all files to save
-git commit -m "My first CoppeliaSim project"   # 3. make a save point
-git remote add origin https://github.com/YOUR-NAME/coppeliasim-tutorial.git   # 4. point to your cloud
-git push -u origin main                   # 5. upload everything to GitHub
+git init                                              # 1. turn on the "save system"
+git add .                                             # 2. put all files on the save list
+git commit -m "My first CoppeliaSim project"          # 3. make a save point
+git remote add origin https://github.com/Kavinda-Wickramasinghe/CoppeliaSim_tutorial.git   # 4. point to the cloud
+git push -u origin main                               # 5. upload everything
 ```
 
-**What the 5 lines mean (very simple):**
+In plain English:
 
-| Command | Plain English |
-| ------- | ------------- |
+| Command | Meaning |
+| ------- | ------- |
 | `git init` | "Start saving my files" |
-| `git add .` | "Put these files in the save list" (the `.` means "all files") |
+| `git add .` | "Save-list all files" (`.` = all) |
 | `git commit -m "..."` | "Save now, with this note" |
-| `git remote add origin ...` | "My cloud storage is at this address" |
+| `git remote add origin ...` | "My cloud lives at this address" |
 | `git push` | "Upload to the cloud" |
 
-Now refresh your GitHub page. **Your files are online.** 🎉
+**First time pushing — what happens:**
+
+- 🪟 **Windows:** a GitHub login window pops up → click **Sign in with your browser** → log in → done.
+- 🍎 **macOS:** a window may pop up asking to sign in to GitHub → follow it. If it asks for a password in the terminal instead, it wants a **token**, not your password — create one at <https://github.com/settings/tokens> and paste it.
+
+Now refresh the GitHub page in your browser. **Your files are online.** 🎉
 
 ## 7.5 Your new daily habit (3 commands)
 
@@ -345,56 +474,59 @@ git commit -m "What I changed"
 git push
 ```
 
-That's it. Save point → upload.
+Save point → upload. That's the whole habit.
 
-## 7.6 What should NOT be uploaded (very important)
+## 7.6 What should NOT be uploaded
 
-You will see a file called `.gitignore` in this project. It tells Git to skip things like your `.venv` folder (thousands of junk files). **Never delete it, and never upload a `.venv` folder.**
+The file `.gitignore` in this project tells Git to skip junk (like your `.venv` folder — thousands of files you never want online).
 
-```bash
-git status   # this shows what Git sees — .venv should NOT appear
-```
-
-If a big `__pycache__` or `.venv` folder shows up, add its name to `.gitignore`.
+- **Never delete `.gitignore`.** Never upload a `.venv` folder.
+- Check any time with `git status` — `.venv` should **not** appear in the list.
 
 ## 7.7 If you make a mistake
 
-| Situation | Command |
-| --------- | ------- |
-| "I broke a file and want it back" | `git restore file.py` |
-| "I want to un-save the last commit" | `git reset --soft HEAD~1` |
-| "I saved, but never pushed" | `git push` |
-| "GitHub has newer files than me" | `git pull` (download first, then edit) |
+| Situation | Fix |
+| --------- | --- |
+| "I broke a file, want it back" | `git restore file.py` |
+| "I want to undo my last save point" | `git reset --soft HEAD~1` |
+| "I saved but forgot to upload" | `git push` |
+| "GitHub has newer files than me" | `git pull` (download first, then work) |
 
 ---
 
-# PART 8 — Problems & fixes 🔧
+# PART 8 — Problems & Fixes 🔧
+
+Find your problem in the left column, apply the fix:
 
 | Problem | What it means | Fix |
 | ------- | ------------- | --- |
-| `Connection refused` when running Python | CoppeliaSim isn't running or its bridge is off | Open CoppeliaSim, then `Modules → Connectivity → ZMQ remote API server` |
-| `ModuleNotFoundError: coppeliasim_zmqremoteapi_client` | Package not installed | `python -m pip install -r requirements.txt` (make sure `(.venv)` is visible!) |
-| Nothing appears when script runs | Script finished too fast | Change `DURATION = 5.0` to `15.0` and rerun |
-| `git push` asks for a password | GitHub wants a token, not your password | Create one at <https://github.com/settings/tokens> and paste it |
-| `git push` says "failed to push some refs" | GitHub has files you don't have | `git pull` first, then `git push` |
-| Windows firewall popup | Windows is blocking Python | Click **Allow access** |
-| CoppeliaSim won't open on macOS | macOS blocks unknown apps | Right-click app → **Open** |
-| Script hangs forever | The simulation waits for `sim.step()` | Add `sim.step()` at the end of your loop |
+| `Connection refused` | CoppeliaSim is closed, or its bridge is off | Open CoppeliaSim → menu `Modules → Connectivity → ZMQ remote API server` → run your script again |
+| `ModuleNotFoundError: coppeliasim_zmqremoteapi_client` | The talking package isn't installed (or you're outside `.venv`) | Check that `(.venv)` is visible in your terminal. If not, activate it (Part 2.4). Then: `python -m pip install -r requirements.txt` |
+| 🪟 `'python' is not recognized` | Python isn't in PATH | Reinstall Python and **tick "Add python.exe to PATH"** (Part 2.2). Then open a **new** terminal |
+| 🪟 `running scripts is disabled on this system` | PowerShell blocks `.venv` activation | `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser` then activate again |
+| 🍎 `python: command not found` | Mac needs the `3` | Use `python3` and `python3 -m pip ...` |
+| 🍎 macOS blocks CoppeliaSim | "Unidentified developer" | Right-click (Ctrl+click) the app → **Open** → **Open** |
+| Nothing appears when a script runs | Script finished too fast | Open `scripts/01_first_simulation.py`, change `DURATION = 5.0` to `15.0`, save, run again |
+| 🪟 Windows firewall popup during scripts | Windows asks if Python may talk on your network | Click **Allow access** (Python is just talking to CoppeliaSim on your own computer) |
+| Script hangs forever (nothing happens) | In stepping mode the simulation **waits** for `sim.step()` | Make sure your loop calls `sim.step()` each round |
+| `git push` asks for a password | GitHub wants a **token**, not your account password | On the password prompt, paste a token from <https://github.com/settings/tokens>, or use the browser sign-in popup |
+| `git push` says "failed to push some refs" | GitHub has files you don't have yet | `git pull` first, then `git push` again |
 
 ---
 
 # PART 9 — What to learn next 🧭
 
-You now know the 20% that gives 80% of the results. Next steps:
+You now know the small core that everything else is built on. Try these, in order:
 
-1. **Drive a real robot model:** in CoppeliaSim's left panel, open `robots → mobile → Pioneer 3-DX` and drag it into the scene. Find its wheel names in the right panel, then use `sim.setJointTargetVelocity()` on them (you already know how!).
-2. **Read an object's position:** `sim.getObjectPosition(handle, sim.handle_world)` — try printing the cube's position instead of setting it.
-3. **Make a robot follow a path:** combine what you learned — read position, compare to a target, nudge a joint toward it.
-4. **Keep exploring** the official manual: <https://manual.coppeliarobotics.com/>
+1. **Drive a real robot model:** in CoppeliaSim's model browser (left side), open `robots/mobile/Pioneer 3-DX` and drag it into the scene. Find its wheel names in the scene list (right side), then spin them with `sim.setJointTargetVelocity()` — you already know how.
+2. **Read positions:** `sim.getObjectPosition(handle, sim.handle_world)` gives you where an object **is** (we only *set* positions so far). Try printing it.
+3. **Make a robot follow something:** read a position → compare it to a target → nudge a joint toward it → repeat.
+4. **Official manual** (when you want to go deeper): <https://manual.coppeliarobotics.com/>
 
-**Remember the golden rules:**
-- 🟢 CoppeliaSim must be **open** before your Python script runs
+**The golden rules, one last time:**
+
+- 🟢 CoppeliaSim **open first**, Python script second
 - 🟢 In stepping mode, the simulation **waits** for `sim.step()`
-- 🟢 Commit your work **often**, and push it to GitHub
+- 🟢 `git add` → `git commit` → `git push`, **often**
 
-Enjoy — you've just completed your first robot simulation. 🤖🎉
+Enjoy — you just built your first robot simulations. 🤖🎉
