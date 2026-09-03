@@ -34,7 +34,7 @@ print(f"Simulation time: {sim.getSimulationTime():.2f} s")
 shapes = sim.getObjectsInTree(sim.handle_scene, sim.sceneobject_shape)
 print(f"Found {len(shapes)} shape object(s) in the scene.")
 for handle in shapes[:5]:
-    name = sim.getObjectName(handle)
+    name = sim.getObjectAlias(handle)
     print(f"  - {name}")
 
 print("\nNext step: python scripts/01_first_simulation.py")
