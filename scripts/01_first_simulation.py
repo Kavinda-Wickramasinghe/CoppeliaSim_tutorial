@@ -36,7 +36,7 @@ try:
 except Exception:
     # Create a 20 cm x 20 cm x 20 cm cube in the scene.
     cube = sim.createPrimitiveShape(sim.primitiveshape_cuboid, [0.2, 0.2, 0.2])
-    sim.setObjectName(cube, CUBE_NAME)
+    sim.setObjectAlias(cube, CUBE_NAME)
     # Put the cube 0.3 m above the ground (world coordinates).
     sim.setObjectPosition(cube, sim.handle_world, [0.0, 0.0, 0.3])
     print(f'Created object "{CUBE_NAME}" (handle {cube}).')

@@ -25,13 +25,13 @@ sim = client.require("sim")
 # sim.joint_revolute      = hinge joint (spins around one axis)
 # sim.jointmode_kinematic = code drives the joint (no complex physics)
 joint = sim.createJoint(sim.joint_revolute, sim.jointmode_kinematic, 0)
-sim.setObjectName(joint, "MyFirstJoint")
+sim.setObjectAlias(joint, "MyFirstJoint")
 sim.setObjectPosition(joint, sim.handle_world, [0.0, 0.0, 0.3])
 
 # --- 3. Create the arm and attach it to the joint -----------------------
 # A long, thin cuboid: 60 cm long, 4 cm x 4 cm cross-section.
 arm = sim.createPrimitiveShape(sim.primitiveshape_cuboid, [0.6, 0.04, 0.04])
-sim.setObjectName(arm, "MyArm")
+sim.setObjectAlias(arm, "MyArm")
 # Attach arm to joint. True = keep the arm visually where it is now.
 sim.setObjectParent(arm, joint, True)
 # Place the arm 0.3 m along the joint's local x-axis, so it hangs off the hinge.
